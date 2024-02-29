@@ -5,7 +5,6 @@ import React from 'react';
 
 import { Title } from '@/components';
 import { urlFor } from '@/lib/client';
-
 import styles from './index.module.scss';
 
 const Post = (props) => {
