@@ -10,8 +10,8 @@ import styles from './index.module.scss';
 const Post = (props) => {
   const { className, image, title, description, slug } = props;
   return (
-    <Link href={`post/${encodeURIComponent(slug.current)}`} className={cl(className, styles.post)}>
-      <div className={styles.postLink}>
+    <Link href={`post/${encodeURIComponent(slug.current)}`} className={cl(className, styles.post, styles.postLink)}>
+      <div>
         <Title type="small" className={styles.postTitle}>
           {title}
         </Title>
