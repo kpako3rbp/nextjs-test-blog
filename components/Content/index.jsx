@@ -7,9 +7,9 @@ import { clientConfig } from '@/lib/client';
 import styles from './index.module.scss';
 
 const Content = (props) => {
-  const { className, children, body } = props;
+  const { className, body } = props;
 
-  const serializers = {
+  /*  const serializers = {
     types: {
       code: (props) => (
         <pre data-language={props.node.language}>
@@ -17,7 +17,8 @@ const Content = (props) => {
         </pre>
       ),
     },
-  };
+  };*/
+
   return (
     <div className={cl(styles.content, className)}>
       <BlockContent
