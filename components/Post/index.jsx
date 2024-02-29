@@ -12,7 +12,7 @@ const Post = (props) => {
   const { className, image, title, description, slug } = props;
   return (
     <Link href={`post/${encodeURIComponent(slug.current)}`} className={cl(className, styles.post)}>
-      <a className={styles.postLink}>
+      <div className={styles.postLink}>
         <Title type="small" className={styles.postTitle}>
           {title}
         </Title>
@@ -22,7 +22,7 @@ const Post = (props) => {
           </div>
           <p className={styles.postDescription}>{description}</p>
         </div>
-      </a>
+      </div>
     </Link>
   );
 };

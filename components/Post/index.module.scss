@@ -17,6 +17,7 @@
     &Link {
         text-decoration: none;
         color: black;
+        cursor: pointer;
 
         &:hover {
             .postTitle::after {
