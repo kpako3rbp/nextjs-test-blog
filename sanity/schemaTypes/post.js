@@ -27,34 +27,34 @@ export default {
       name: 'meta_title',
       type: 'string',
       title: 'Meta title',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
       group: 'meta',
     },
     {
       name: 'title',
       type: 'string',
       title: 'Title',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
       group: 'content',
     },
     {
       name: 'publishedDate',
       type: 'datetime',
       title: 'Published date',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
       group: 'content',
       options: {
         dateFormat: 'DD MMM,',
         timeFormat: 'HH:mm',
         timeStep: 15,
-        calendarTodayLabel: 'Today'
-      }
+        calendarTodayLabel: 'Today',
+      },
     },
     {
       name: 'image',
       type: 'image',
       title: 'Image',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
       group: 'content',
       fields: [
         {
@@ -66,7 +66,7 @@ export default {
           name: 'attribution',
           type: 'string',
           title: 'Attribution',
-        }
+        },
       ],
     },
     {
@@ -77,17 +77,14 @@ export default {
       options: {
         source: 'title',
         maxLength: 200, // will be ignored if slugify is set
-        slugify: input => input
-          .toLowerCase()
-          .replace(/\s+/g, '-')
-          .slice(0, 200)
-      }
+        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+      },
     },
     {
       name: 'description',
       type: 'text',
       title: 'Description',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
       group: 'content',
     },
     {
@@ -105,5 +102,5 @@ export default {
         },
       ],
     },
-  ]
-}
+  ],
+};

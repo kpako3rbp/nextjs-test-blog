@@ -64,10 +64,10 @@ const Home = (props) => {
 };
 
 export const getServerSideProps = async () => {
-  const { posts, total } = await loadPosts(0, LOAD_MORE_STEP);
+  const { loadedPosts, total } = await loadPosts(0, LOAD_MORE_STEP);
   return {
     props: {
-      initialPosts: posts,
+      initialPosts: loadedPosts,
       total,
     },
   };

@@ -9,10 +9,10 @@ export default async function posts(req, res) {
     });
   }
 
-  const { posts, total } = await loadPosts(start, end);
+  const { loadedPosts, total } = await loadPosts(start, end);
 
   res.status(200).json({
-    posts,
+    posts: loadedPosts,
     total,
   });
 }
@@ -22,10 +22,10 @@ export async function loadPosts(start, end) {
   "posts": *[_type == "post"] | order(publishedDate desc) [${start}...${end}] {_id, publishedDate, title, slug, description, image},
   "total": count(*[_type == "post"])
   }`;
-  const { posts, total } = await client.fetch(query);
+  const { posts: loadedPosts, total } = await client.fetch(query);
 
   return {
-    posts,
+    loadedPosts,
     total,
   };
 }
